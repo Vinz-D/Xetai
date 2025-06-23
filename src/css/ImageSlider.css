@@ -1,0 +1,83 @@
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+}
+
+.slider-image {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 1s ease, transform 5s ease-in-out;
+  z-index: 0;
+}
+
+.slider-image.active {
+  opacity: 1;
+  transform: scale(1.1); /* zoom từ từ trong 5s */
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .slider-image {
+    height: 300px; /* hoặc 100vh nếu bạn muốn full chiều cao màn */
+  }
+
+  .slider-image {
+    object-fit: cover;
+    width: 100vw;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+}
+
+
+/* Dot navigation */
+.dot-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #bbb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #333;
+}
+
+.slider-image {
+  position: absolute;
+  top: 50%;               /* ✅ căn giữa theo chiều dọc */
+  left: 50%;              /* ✅ căn giữa theo chiều ngang */
+  transform: translate(-50%, -50%) scale(1);  /* ✅ dịch tâm + scale */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease, transform 5s ease-in-out;
+  z-index: 0;
+}
+
+.slider-image.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1); /* ✅ zoom có tâm */
+  z-index: 1;
+}

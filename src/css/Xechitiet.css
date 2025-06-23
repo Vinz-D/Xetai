@@ -1,0 +1,270 @@
+/* XeChiTiet.css */
+
+
+.offcanvas ul li {
+  border-bottom: 1px solid #eee;
+}
+
+.offcanvas .offcanvas-header {
+  justify-content: space-between;
+}
+.section-loaixe {
+  margin-top: 10px;
+}
+
+.xe-detail-container {
+  padding: 30px 15px;
+  background-color: #f9f9f9;
+}
+
+.xe-detail-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.xe-detail-image {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.section-loaixe .inner-picture {
+  padding: 10px;
+}
+
+
+.inner-product .inner-image {
+  overflow: hidden;
+}
+
+.inner-image img {
+    transition: transform 0.4s ease;
+}
+.inner-image img:hover {
+  transform: scale(1.08);
+}
+
+.section-loaixe .inner-picture .inner-image img {
+  width: 100%;
+  height: 250px !important;       
+  object-fit: cover;    
+  border-radius: 4px;
+}
+
+.section-loaixe .inner-product {
+  height: 353px;
+}
+
+.section-loaixe .box-tittle {
+  font-size: 32px;
+  padding: 20px 20px 0px 20px;
+}
+
+.img-fluid {
+  width: 100%;
+}
+.section-loaixe .inner-tittle h2{
+  font-size: 26px;
+}
+
+.section-loaixe .inner-tittle {
+    text-align: left;
+}
+
+.inner-tittle p {
+  margin: 0;
+}
+
+.section-loaixe .inner-product .inner-tittle {
+
+}
+
+.section-loaixe .accordion-header button{
+  color: #45564b;
+  background:none;
+  font-size: 25px;
+}
+
+.section-loaixe .accordion-item {
+  border: none;
+}
+
+.section-loaixe .accordion-body .inner-product {
+  border: none;
+}
+
+.accordion-body .inner-tittle {
+  text-align: center;
+}
+
+.section-loaixe .inner-tittle{
+  align-content: center;
+}
+.inner-product .inner-image img{
+  height: 250px !important;
+  left: 0%;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 0%;
+}
+
+.inner-product {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.inner-product .inner-image{
+      background-color: #e1e1e1;
+    padding-top: 66%;
+    position: relative;
+}
+.panel .panel-default {
+  margin-top: 0px;
+}
+
+.truck-detail-container {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #fff;
+}
+
+.truck-image-wrapper {
+  text-align: center;
+}
+
+.truck-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.truck-info {
+  padding-top: 10px;
+}
+
+.weight-options button {
+  margin: 5px 8px 5px 0;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.weight-options .active {
+  background-color: red;
+  color: white;
+}
+
+.color-dot {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.color-dot.blue { background: #1d3d8c; }
+.color-dot.white { background: #fff; border: 1px solid #999; }
+
+.color-dot.selected {
+  border-color: red;
+}
+
+.image-container {
+  position: relative;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0,0,0,0.4);
+    padding: 1px 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slick-prev {
+  left: 10px;
+}
+.slick-next {
+  right: 10px;
+}
+
+.zoom-wrapper:hover .zoom-image {
+  transform: scale(1.05);
+}
+
+.color-dot {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #999;
+  cursor: pointer;
+}
+
+.color-dot.white {
+  background-color: white;
+}
+.color-dot.blue {
+  background-color: blue;
+}
+
+/* .color-dot.selected {
+  box-shadow: 0 0 0 3px #dc3545;
+} */
+
+
+.tab-nav-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  margin-right: 10px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.tab-nav-item {
+  color: #bbb;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab-nav-item:hover {
+  color: #dc3545;
+}
