@@ -62,7 +62,7 @@ export const productData = [
       },
       {
         id: 'tera190sl',
-        title: 'TERA190SL-TERA245SL-TERA345SL',
+        title: 'TERA190SL-TERA245SL-TERA345SL', 
         img: '/img/tera190sl-lung.png',
         contact: 'CHUYÊN GIA VẬN CHUYỂN SẢN PHẨM KÍCH THƯỚC DÀI',
         description: 'Không phải ngẫu nhiên mà 3 mẫu xe tải nhẹ Tera190SL, Tera24Không phải ngẫu nhiên mà 3 mẫu xe tải nhẹ Tera190SL, Tera245SL & Tera345SL phân khúc tải trọng 1.9T, 2.49T và 3.49T lại liên tục đạt doanh số dẫn đầu trong phân khúc xe tải nhẹ thùng siêu dài 6.3m. Vận hành bền bỉ, công năng linh hoạt, thiết kế hiện đại cùng những ưu đãi hấp dẫn mang lại lợi thế cạnh tranh lớn cho sản phẩm này so với các đối thủ khác cùng phân khúc.',
