@@ -8,6 +8,7 @@ import ImageSlider from "./ImageSlider";
 import { productData } from "./AccordionXe";
 import TabSectionNav from './TabSectionNav';
 
+
 const XeChiTiet = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -68,7 +69,7 @@ const XeChiTiet = () => {
     <>
       <ImageSlider />
       <TabSectionNav />
-      <div className="product-detail container-xl">
+      <div className="product-detail">
         <div className="row">
           <div className="col-md-6">
             <Slider {...sliderSettings} ref={sliderRef}>
@@ -83,91 +84,100 @@ const XeChiTiet = () => {
               ))}
             </Slider>
           </div>
+          <div className="col-12 col-md-6">
+                <h2 className="product-title fw-bold mb-3">{product.title}</h2>
+                <p className="product-price mb-2">
+                  <strong className="text-muted">Mô tả:</strong> {product.contact}
+                </p>
+                <p className="mb-3">{product.description}</p>
 
-          <div className="col-md-6">
-            <h2 className="product-title">{product.title}</h2>
-            <p className="product-price">Mô tả: <strong>{product.contact}</strong></p>
-            <p>{product.description}</p>
+                {/* Tải trọng */}
+                <div className="mb-4">
+                  <strong className="d-block mb-2">Tải trọng:</strong>
+                  <div className="d-flex flex-wrap gap-2">
+                    {Object.keys(imageData[selectedColor] || {}).map((w) => (
+                      <button
+                        key={w}
+                        className={`btn btn-outline-danger ${selectedWeight === w ? 'active' : ''}`}
+                        onClick={() => setSelectedWeight(w)}
+                      >
+                        {w} KG
+                      </button>
+                    ))}
+                  </div>
+                </div>
 
-            <div className="weight-selector">
-              <strong>Tải trọng:</strong>
-              {Object.keys(imageData[selectedColor] || {}).map(w => (
-                <button
-                  key={w}
-                  className={`btn btn-outline-danger m-1 ${selectedWeight === w ? 'active' : ''}`}
-                  onClick={() => setSelectedWeight(w)}
-                >
-                  {w} KG
-                </button>
-              ))}
-            </div>
+                {/* Nút liên hệ / báo giá */}
+                <div className="d-flex flex-wrap gap-3 mb-4">
+                  <button className="btn btn-danger">
+                    <i className="bi bi-telephone me-1"></i> 091.234.5678
+                  </button>
+                  <button className="btn btn-outline-dark">
+                    <i className="bi bi-receipt me-1"></i> NHẬN BÁO GIÁ
+                  </button>
+                </div>
 
-            <div className="mt-4 d-flex gap-3 flex-wrap">
-              <button className="btn btn-danger">
-                <i className="bi bi-telephone"></i> 091.234.5678
-              </button>
-              <button className="btn btn-outline-dark">
-                <i className="bi bi-receipt"></i> NHẬN BÁO GIÁ
-              </button>
-            </div>
+                {/* Màu sắc */}
+                <div className="color-selector d-flex align-items-center gap-3 flex-wrap">
+                  <strong className="me-2">Màu sắc:</strong>
+                  {colorKeys.map((color, i) => (
+                    <span
+                      key={color}
+                      className={`color-dot border ${selectedColorIndex === i ? 'border-3 border-dark' : 'border-2 border-secondary'}`}
+                      style={{
+                        width: '25px',
+                        height: '25px',
+                        borderRadius: '50%',
+                        backgroundColor: color,
+                        cursor: 'pointer'
+                      }}
+                      onClick={() => {
+                        setSelectedColorIndex(i);
+                        sliderRef.current?.slickGoTo(i);
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
 
-            <div className="color-selector mt-4 d-flex gap-3 align-items-center">
-              <strong className="me-2">Màu sắc:</strong>
-              {colorKeys.map((color, i) => (
-                <span
-                  key={color}
-                  className={`color-dot ${selectedColorIndex === i ? 'selected' : ''}`}
-                  style={{
-                    width: '25px',
-                    height: '25px',
-                    borderRadius: '50%',
-                    backgroundColor: color,
-                    border: '2px solid #999',
-                    cursor: 'pointer'
-                  }}
-                  onClick={() => {
-                    setSelectedColorIndex(i);
-                    sliderRef.current?.slickGoTo(i);
-                  }}
-                />
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* SẢN PHẨM KHÁC */}
-        <div className="mt-5">
-          <h3 className="text-danger fw-bold mb-4">SẢN PHẨM KHÁC</h3>
-          <div className="row">
-            {relatedProducts.map((p, i) => (
-              <div key={i} className="col-md-4 mb-4">
-                <div className="card h-100 text-center">
-                  <div onClick={() => handleNavigate(p)} style={{ cursor: 'pointer' }}>
-                    <img src={p.img} alt={p.title} className="card-img-top p-3" />
+        <div className="mt-2">
+            <h3 className="inner-header text-danger fw-bold mb-4">SẢN PHẨM LIÊN QUAN</h3>
+            <div className="container-xl">
+              <div className="row">
+                {relatedProducts.length > 0 ? (
+                  relatedProducts.map((p, i) => (
+                    <div key={i} className="col-12 col-sm-6 col-md-4 col-xl-3 mb-4">
+                      <div className="card h-100 text-center border-0">
+                        <div onClick={() => handleNavigate(p)} style={{ cursor: 'pointer' }}>
+                          <img
+                            src={p.img}
+                            alt={p.title}
+                            className="card-img-top img-fluid p-3"
+                            style={{ objectFit: 'contain', height: '200px', width: '100%' }}
+                          />
+                        </div>
+                        <div className="card-body d-flex flex-column">
+                          <h5 className="card-title text-danger fw-bold">{p.title}</h5>
+                          <p className="card-text text-muted">
+                            <small>
+                              {Object.keys(p.imageData?.white || {}).join("KG | ") + "KG"}
+                            </small>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="col-12 text-center text-muted">
+                    Không có sản phẩm khác để hiển thị.
                   </div>
-                  <div className="card-body">
-                    <h5 className="card-title text-danger fw-bold">{p.title}</h5>
-                    <p className="mb-1">
-                      <small>{Object.keys(p.imageData?.white || {}).join("KG | ") + "KG"}</small>
-                    </p>
-                    <p className="fw-bold">Giá từ: {p.contact}</p>
-                    <button
-                      className="btn btn-outline-danger"
-                      onClick={() => handleNavigate(p)}
-                    >
-                      LIÊN HỆ
-                    </button>
-                  </div>
-                </div>
+                )}
               </div>
-            ))}
-            {relatedProducts.length === 0 && (
-              <div className="col-12 text-center text-muted">
-                Không có sản phẩm khác để hiển thị.
-              </div>
-            )}
+            </div>
           </div>
-        </div>
       </div>
     </>
   );

@@ -6,7 +6,6 @@ import ImageSlider from "./ImageSlider"; // điều chỉnh path nếu khác
 import XeChiTiet from './Chitietxe';
 import AccordionXe from './AccordionXe';
 import GioiThieu from './Gioithieu';
-// import TabSectionNav from './TabSectionNav';
 import Main from './Main';
 import './css/style.css';
 import './css/bootstrap.min.css';

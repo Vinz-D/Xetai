@@ -82,7 +82,7 @@ export default function Main() {
 
   return (
     <>
-      <div className="modal fade modal-form" id="exampleModal">
+      {/* <div className="modal fade modal-form" id="exampleModal">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header flex-column">
@@ -121,7 +121,7 @@ export default function Main() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="section-two">
         <div className="container mt-4">
@@ -130,6 +130,7 @@ export default function Main() {
               <p>
                 Các sản phẩm xe tải, xe ben, xe đầu kéo, xe chuyên dùng và xe năng lượng mới được nhập khẩu và phân phối chính hãng, chất lượng tuyệt đối. Giá thành rẻ nhất đi kèm các chương trình khuyến mãi hấp dẫn. Quy trình bảo hành, bảo dưỡng, sửa chữa và cung cấp phụ tùng đạt tiêu chuẩn toàn cầu của các hãng xe, đáp ứng mọi nhu cầu của quý khách hàng.
               </p>
+
             </div>
             <div className="col-md-6 inner-picture wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
               <img src="/img/sectionbot.jpg" className="img-fluid rounded" alt="Ảnh sản phẩm" />

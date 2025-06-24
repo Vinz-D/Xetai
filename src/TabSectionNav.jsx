@@ -19,16 +19,30 @@ const TabSectionNav = () => {
   };
 
   return (
-    <div className="tab-nav-container shadow-sm">
-      {sections.map((item) => (
-        <span
-          key={item.id}
-          className="tab-nav-item"
-          onClick={() => scrollToSection(item.id)}
-        >
-          {item.label}
-        </span>
-      ))}
+    <div className="tab-nav-container bg-white shadow-sm py-2 px-3 sticky-top" style={{ zIndex: 1000 }}>
+      <div className="container-fluid overflow-auto">
+        <div className="d-flex flex-nowrap gap-3">
+          {sections.map((item) => (
+            <button
+              key={item.id}
+              className="btn btn-link text-nowrap text-dark px-3 tab-nav-item"
+              onClick={() => scrollToSection(item.id)}
+              style={{
+                textDecoration: 'none',
+                borderBottom: '3px solid transparent',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderBottom = '3px solid red';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderBottom = '3px solid transparent';
+              }}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

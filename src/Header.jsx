@@ -1,88 +1,104 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './css/Xechitiet.css';
 
 export default function Header() {
   return (
     <>
-      <header className="header">
-        {/* Top header */}
-        {/* <div className="header-top py-2 text-white text-center bg-dark">
-          Vượng Đoàn
-        </div> */}
+      {/* --- TOP HEADER --- */}
+<div className="header-top displaynone py-1 px-3 d-md-flex justify-content-end align-items-center small" style={{ backgroundColor: "#e5e5e5" }}>
+  <div className="d-flex align-items-center gap-2 flex-wrap">
 
-        {/* Main header */}
-        <div className="header-main d-flex justify-content-between align-items-center bg-dark text-white">
-          {/* Logo + Title */}
-          <div className="d-flex align-items-center">
-            {/* <Link to="/">
-              <img
-                src="/img/logo-fb.png"
-                alt="Logo"
-                style={{ height: "40px" }}
-                className="me-2"
-              />
-            </Link>
-            <Link to="/" className="text-danger fw-bold fs-5 text-decoration-none">
-              VƯỢNG ĐOÀN
-            </Link> */}
+    <div className="d-flex align-items-center text-muted gap-2 me-2">
+      <div className="rounded-circle border border-danger d-flex align-items-center justify-content-center" style={{ width: 22, height: 22 }}>
+        <i className="bi bi-telephone text-danger" style={{ fontSize: "12px" }}></i>
+      </div>
+      <span className="fw-normal">Hotline: <span className="text-danger fw-bold">0987 654 321 - 0987 654 321</span></span>
+    </div>
+
+    {/* <div className="text-muted">|</div> */}
+
+    {/* <div className="d-flex gap-2">
+      <a href="#" className="social-icon"><i className="bi bi-facebook"></i></a>
+      <a href="#" className="social-icon"><i className="bi bi-youtube"></i></a>
+      <a href="#" className="social-icon"><i className="bi bi-tiktok"></i></a>
+      <a href="#" className="social-icon">Zalo</a>
+    </div> */}
+  </div>
+</div>
+
+
+      {/* --- MAIN HEADER --- */}
+      <header className="header-main shadow-sm position-sticky top-0 bg-white" style={{ zIndex: 1050 }}>
+        <div className="container-fluid py-2 px-3 d-flex justify-content-between align-items-center">
+          {/* Logo */}
+          <Link to="/">
+            <img src={process.env.PUBLIC_URL + "/img/logo.png"} alt="Banner" alt="Logo" style={{ height: 32 }} />
+          </Link>
+
+          {/* === Mobile Buttons === */}
+          <div className="d-flex d-md-none align-items-center">
+            <button className="btn p-0 me-3 bg-light rounded-circle d-flex justify-content-center align-items-center"
+              style={{ width: 36, height: 36 }}>
+              <i className="bi bi-search text-danger"></i>
+            </button>
+            <button className="btn p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+              <i className="bi bi-list" style={{ fontSize: 28, color: 'red' }}></i>
+            </button>
           </div>
 
-          {/* Desktop Nav */}
-          <nav className="d-none d-md-flex align-items-center">
-            <Link to="/" className="dropdown"><a href="" className="text-white text-decoration-none dropdown">TRANG CHỦ</a></Link>
-            <div className="dropdown">
-              <a className="btn-dark dropdown-toggle dropdown text-white text-decoration-none" data-bs-toggle="dropdown">
-                SẢN PHẨM
-              </a>
-              <ul className="dropdown-menu">
-                <li><Link className="dropdown-item" to="/san-pham-1">Item 1</Link></li>
-                <li><Link className="dropdown-item" to="/san-pham-2">Item 2</Link></li>
-                <li><Link className="dropdown-item" to="/san-pham-3">Item 3</Link></li>
-              </ul>
-            </div>
-            <Link to="/gioi-thieu" className="dropdown"><a href="" className="text-white text-decoration-none dropdown">GIỚI THIỆU</a></Link>
-            <Link to="/dich-vu" className="dropdown"><a href="" className="text-white text-decoration-none dropdown">DỊCH VỤ</a></Link>
-            <Link to="/tin-tuc" className="dropdown"><a href="" className="text-white text-decoration-none dropdown">TIN TỨC</a></Link>
-          </nav>
+          {/* === Desktop Nav === */}
+          <nav className="d-none d-md-flex gap-4 align-items-center header-menu fw-semibold">
+            <Link to="/" className="nav-link-custom">TRANG CHỦ</Link>
 
-          {/* Mobile button */}
-          <button
-            className="btn d-md-none text-white"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#mobileMenu"
-          >
-            <i className="fa-solid fa-bars me-2"></i> MENU
-          </button>
+            <div className="position-relative group">
+              <span className="nav-link-custom">SẢN PHẨM ▾</span>
+              <div className="dropdown-menu-custom">
+                <Link to="/san-pham-1" className="dropdown-item-custom">Sản phẩm 1</Link>
+                <Link to="/san-pham-2" className="dropdown-item-custom">Sản phẩm 2</Link>
+              </div>
+            </div>
+
+            <Link to="/gioi-thieu" className="nav-link-custom">GIỚI THIỆU</Link>
+            <Link to="/he-thong-dai-ly" className="nav-link-custom">HỆ THỐNG ĐẠI LÝ</Link>
+            <Link to="/dich-vu" className="nav-link-custom">DỊCH VỤ</Link>
+            <Link to="/tin-tuc" className="nav-link-custom">TIN TỨC - SỰ KIỆN</Link>
+            <Link to="/tuyen-dung" className="nav-link-custom">TUYỂN DỤNG</Link>
+            <Link to="/lien-he" className="nav-link-custom">LIÊN HỆ</Link>
+            <button className="btn p-0 ms-2">
+              <i className="bi bi-search text-danger fs-5"></i>
+            </button>
+          </nav>
         </div>
       </header>
 
-      {/* Offcanvas Mobile Menu */}
+      {/* Spacer để tránh bị che bởi fixed header */}
+      {/* <div style={{ height: "100px" }}></div> */}
+
+      {/* === Mobile OFFCANVAS MENU === */}
       <div
-        className="offcanvas offcanvas-end"
+        className="offcanvas offcanvas-end text-white"
         tabIndex="-1"
         id="mobileMenu"
         aria-labelledby="mobileMenuLabel"
+        style={{ background: 'linear-gradient(#c4261d, #910101)' }}
       >
-        <div className="offcanvas-header bg-dark text-white">
-          <h5 id="mobileMenuLabel" className="mb-0">MENU</h5>
-          <button
-            type="button"
-            className="btn-close btn-close-white"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
+        <div className="offcanvas-header">
+          <img src="/logo-teraco.png" alt="Logo" style={{ height: 30 }} />
+          <button type="button" className="btn text-white" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i className="bi bi-x-lg fs-4"></i>
+          </button>
         </div>
         <div className="offcanvas-body">
-          <ul className="list-unstyled fs-5">
-            <li><Link to="/" className="d-block py-2">Trang Chủ</Link></li>
-            <li><Link to="/gioi-thieu" className="d-block py-2">Giới Thiệu</Link></li>
-            <li><Link to="/xe-hyundai" className="d-block py-2">Xe Hyundai <span className="float-end">+</span></Link></li>
-            <li><Link to="/dich-vu" className="d-block py-2 text-primary">Dịch Vụ <span className="float-end">+</span></Link></li>
-            <li><Link to="/tra-gop" className="d-block py-2">Trả Góp</Link></li>
-            <li><Link to="/chi-phi" className="d-block py-2">Dự Toán Chi Phí</Link></li>
-            <li><Link to="/khuyen-mai" className="d-block py-2">Khuyến Mãi</Link></li>
-            <li><Link to="/tin-tuc" className="d-block py-2">Tin Tức</Link></li>
+          <ul className="list-unstyled fs-6 fw-bold">
+            <li className="py-2 border-bottom"><Link to="/" className="text-white text-decoration-none d-block">TRANG CHỦ</Link></li>
+            <li className="py-2 border-bottom"><Link to="/gioi-thieu" className="text-white text-decoration-none d-block">GIỚI THIỆU</Link></li>
+            <li className="py-2 border-bottom d-flex justify-content-between"><span>SẢN PHẨM</span> <span>▾</span></li>
+            <li className="py-2 border-bottom d-flex justify-content-between"><span>HỆ THỐNG ĐẠI LÝ</span> <span>▾</span></li>
+            <li className="py-2 border-bottom d-flex justify-content-between"><span>DỊCH VỤ</span> <span>▾</span></li>
+            <li className="py-2 border-bottom d-flex justify-content-between"><span>TIN TỨC - SỰ KIỆN</span> <span>▾</span></li>
+            <li className="py-2 border-bottom"><Link to="/tuyen-dung" className="text-white text-decoration-none d-block">TUYỂN DỤNG</Link></li>
+            <li className="py-2"><Link to="/lien-he" className="text-white text-decoration-none d-block">LIÊN HỆ</Link></li>
           </ul>
         </div>
       </div>

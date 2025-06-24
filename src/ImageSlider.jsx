@@ -2,12 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import "./css/ImageSlider.css";
 
 const images = [
-  
-  "img/banner (1).png",
-    "/img/banner (2).jpg",
-      "/img/banner (3).jpg",
-          "/img/banner (1).jpg",
+  process.env.PUBLIC_URL + "/img/banner (1).png",
+  process.env.PUBLIC_URL + "/img/banner (2).jpg",
+  process.env.PUBLIC_URL + "/img/banner (3).jpg",
+  process.env.PUBLIC_URL + "/img/banner (1).jpg",
 ];
+
+
 
 export default function ImageSlider() {
   const [index, setIndex] = useState(0);
@@ -26,10 +27,6 @@ export default function ImageSlider() {
     return () => resetTimeout();
   }, [index]);
 
-  const handleDotClick = (i) => {
-    setIndex(i);
-  };
-
   return (
     <div className="slider-container">
       {images.map((img, i) => (
@@ -46,7 +43,7 @@ export default function ImageSlider() {
           <span
             key={i}
             className={`dot ${i === index ? "active" : ""}`}
-            onClick={() => handleDotClick(i)}
+            onClick={() => setIndex(i)}
           ></span>
         ))}
       </div>
