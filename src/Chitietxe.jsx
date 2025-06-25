@@ -150,7 +150,7 @@ const XeChiTiet = () => {
             {/* NÚT LIÊN HỆ */}
             <div className="d-flex flex-wrap gap-3 mb-4">
               <button className="btn btn-danger">
-                <i className="bi bi-telephone me-1"></i> 0902 409 909
+                <i className="bi bi-telephone me-1"></i> 0977 542 970
               </button>
               <button className="btn btn-outline-dark">
                 <i className="bi bi-receipt me-1"></i> NHẬN BÁO GIÁ

@@ -22,7 +22,7 @@ export default function Footer() {
             <address>
               <p>CÔNG TY TNHH MTV Ô TÔ HÒA PHÚC</p>
               <p>Trụ Sở :Số 579, QL1A ,Tổ 18, Ấp Ngũ Phúc , Xã Hố Nai 3, H.Trảng Bom,T. Đồng Nai</p>
-              <p>Hotline: 0987654321</p>
+              <p>Hotline: 0977 452 970</p>
               <p>Email: vuongdoan660@gmail.com</p>
               <p>ĐKKD Số : 3603266238.</p>
             </address>

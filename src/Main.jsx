@@ -149,8 +149,9 @@ export default function Main() {
             </div>
             <div className="col-md-6 mb-3">
               <div className="inner-decs">
-                <h2>Connect to social media in seconds</h2>
-                <p>Already using Facebook? That makes it even easier to build your online portfolio. Pull in photos right from your existing accounts, so your website is ready in a snap.</p>
+                <h2>Với nền tảng cơ sở vật chất khang trang, hiện đại</h2>
+                <div className="inner-box-inline"></div>
+                <p>Cùng với đội ngũ nhân lực nhiều thâm niên, đầy nhiệt huyết mà Ô Tô Hòa Phúc đang sở hữu, chúng tôi luôn tự hào về truyền thống văn hóa doanh nghiệp mà Ban Điều Hành đang cố gắng duy trì trong từng chiến lược kinh doanh, từng kế hoạch hành động: “Hướng tới mục tiêu chất lượng toàn diện, chăm sóc từng khách hàng một như chính người thân của mình</p>
               </div>
             </div>
           </div>
@@ -162,8 +163,8 @@ export default function Main() {
           <h2 className="box-tittle wow zoomIn">Show Room</h2>
           <div className="inner-box-inline"></div>
           <p className="inner-box-decs">Địa chỉ: 579, QL 1A, Tổ 18, Ấp Ngũ Phúc, Xã Hố Nai 3, H. Trảng Bom, Đồng Nai</p>
-          <p className="inner-box-decs">Thứ 2 đến Thứ 6: Từ 7h30 đến 17h. Thứ 7: Từ 7h30 đến 16h</p>
-          <p className="inner-box-decs">Điện thoại: 0901.308.178 – 0919.863.279</p>
+          {/* <p className="inner-box-decs">Thứ 2 đến Thứ 6: Từ 7h30 đến 17h. Thứ 7: Từ 7h30 đến 16h</p> */}
+          <p className="inner-box-decs">Điện thoại: 0977 452 970 – 0977 452 970</p>
         </div>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.972546022007!2d106.9225955742251!3d10.965444755680458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174e744c3862473%3A0x4da31733f53d4495!2zw5QgVMO0IEhvw6AgUGjDumM!5e0!3m2!1svi!2s!4v1681530524897!5m2!1svi!2s"
@@ -189,9 +190,9 @@ export default function Main() {
             <div className="row">
               <div className="col-md-4 col-sm-12">
                 <div className="inner-content">
-                  <h4 className="inner-tittle">Keep in touch</h4>
-                  <p>110-220 Quisque diam odio, maximus ac consectetur eu, 10260 auctor non lorem</p>
-                  <p>You are NOT allowed to re-distribute Softy Pinko template on any template collection websites. Thank you</p>
+                  <h4 className="inner-tittle">Tôi là Vượng Đoàn </h4>
+                  <p>Đại lý chính hãng cung cấp các dòng xe tải, xe du lịch, phụ tùng và dịch vụ bảo dưỡng uy tín hàng đầu</p>
+                  <p>Với nhiều năm kinh nghiệm trong ngành ô tô, chúng tôi cam kết mang đến cho khách hàng sản phẩm chất lượng cao, dịch vụ tận tâm và giá cả hợp lý.</p>
                 </div>
               </div>
             </div>

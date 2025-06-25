@@ -10,10 +10,10 @@ export default function Header() {
   <div className="d-flex align-items-center gap-2 flex-wrap">
 
     <div className="d-flex align-items-center text-muted gap-2 me-2">
-      <div className="rounded-circle border border-danger d-flex align-items-center justify-content-center" style={{ width: 22, height: 22 }}>
-        <i className="bi bi-telephone text-danger" style={{ fontSize: "12px" }}></i>
+      <div className="rounded-circle border border-danger d-flex align-items-center justify-content-center" style={{ width: 33, height: 33 }}>
+        <i className="bi bi-telephone text-danger" style={{ fontSize: "12px " }}></i>
       </div>
-      <span className="fw-normal">Hotline: <span className="text-danger fw-bold">0987 654 321 - 0987 654 321</span></span>
+      <span className="fw-normal">Hotline: <span className="text-danger fw-bold">0977 452 970 - 0977 452 970</span></span>
     </div>
 
     {/* <div className="text-muted">|</div> */}

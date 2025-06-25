@@ -612,11 +612,10 @@
 }
 
 .google-map .inner-box-decs {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   max-width: 700px;
   margin: 0px auto;
-  text-align: center;
   text-transform: inherit;
 }
 
@@ -627,11 +626,20 @@
   margin: 0 auto;
 }
 
+.inner-decs p {
+  margin-top: 20px;
+  text-align: left;
+  padding: 0;
+}
+
 .inner-box-decs {
-  font-size: 14px;
+  font-size: 18px;
   max-width: 600px;
   margin: 10px auto;
   text-align: center;
+}
+.inner-decs h2 {
+  color: #dc3545;
 }
 
 .swiper {
@@ -688,7 +696,7 @@
   font-weight: 600;
   position: relative;
   margin-bottom: 10px;
-  color: #45564B;
+  color: #dc3545;
   text-align: center;
 }
 
