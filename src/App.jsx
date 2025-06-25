@@ -11,6 +11,8 @@ import './css/style.css';
 import './css/bootstrap.min.css';
 import './css/reset.css';
 
+  <meta name="description" content="Công ty Ô tô Hòa Phúc chuyên xe tải Tera 100S, Tera 190, xe tải ben, xe tải van chính hãng. Giao xe tận nơi, giá hợp lý, hỗ trợ trả góp." />
+
 export default function App() {
   useEffect(() => {
     if (window.$ && window.$('.product-list').slick) {

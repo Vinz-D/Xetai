@@ -7,11 +7,13 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+  <meta name="description" content="Công ty Ô tô Hòa Phúc chuyên xe tải Tera 100S, Tera 190, xe tải ben, xe tải van chính hãng. Giao xe tận nơi, giá hợp lý, hỗ trợ trả góp." />
+
 
 export const productData = [
   {
     id: 1,
-    group: 'TỪ 900KG - 3 TẤN',
+    // group: 'TỪ 900KG - 3 TẤN',
     products: [
       {
         id: 'teraco',
@@ -98,7 +100,7 @@ export const productData = [
   },
   {
     id: 2,
-    group: 'TỪ 3 TẤN - 5 TẤN',
+    // group: 'TỪ 3 TẤN - 5 TẤN',
     products: [
       {
         id: 'teraco',
@@ -185,7 +187,7 @@ export const productData = [
   },
   {
     id: 3,
-    group: 'TỪ 3 TẤN - 5 TẤN',
+    // group: 'TỪ 3 TẤN - 5 TẤN',
     products: [
       {
         id: 'teraco',
@@ -303,7 +305,7 @@ export default function AccordionXe() {
   return (
     <div className="section-loaixe">
       <div className="container-xl">
-          <h2 className="box-tittle">DANH SÁCH XE TẢI</h2>
+          {/* <h2 className="box-tittle">DANH SÁCH XE TẢI</h2> */}
         <Accordion defaultActiveKey="0" alwaysOpen>
           {productData.map((item, idx) => (
             <Accordion.Item eventKey={idx.toString()} key={item.id}>

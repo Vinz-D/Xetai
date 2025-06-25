@@ -20,11 +20,10 @@
 
 .slider-image.active {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1.1); /* zoom từ từ */
+  transform: translate(-50%, -50%) scale(1.1); /* zoom nhẹ */
   z-index: 1;
 }
 
-/* Dot navigation */
 .dot-container {
   position: absolute;
   bottom: 20px;
@@ -48,13 +47,38 @@
   background: #333;
 }
 
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
   .slider-container {
-    height: 300px;
+    height: auto;
+    aspect-ratio: 3 / 4; /* giữ tỉ lệ cao như ảnh mobile bạn gửi */
   }
 
   .slider-image {
+    width: 100%;
     height: 100%;
-    width: 100vw;
+    object-fit: contain; /* không crop hình mobile */
+    transform: translate(-50%, -50%) scale(1); /* bỏ zoom nếu cần */
+  }
+
+  .slider-image.active {
+    transform: translate(-50%, -50%) scale(1.02); /* zoom nhẹ hơn */
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-container {
+    height: 400px; /* Hoặc cao hơn tùy ảnh */
+  }
+
+  .slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* thay vì contain */
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .slider-image.active {
+    transform: translate(-50%, -50%) scale(1.05); /* zoom nhẹ lại */
   }
 }

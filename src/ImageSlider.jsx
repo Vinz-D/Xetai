@@ -1,17 +1,26 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./css/ImageSlider.css";
 
-const images = [
-  process.env.PUBLIC_URL + "/img/banner (1).png",
-  process.env.PUBLIC_URL + "/img/banner (2).jpg",
-  process.env.PUBLIC_URL + "/img/banner (3).jpg",
-  process.env.PUBLIC_URL + "/img/banner (1).jpg",
-];
-
-
+const getImages = () => {
+  const isMobile = window.innerWidth <= 768;
+  return isMobile
+    ? [
+        process.env.PUBLIC_URL + "/img/teracobanner1.jpg",
+        process.env.PUBLIC_URL + "/img/teracobanner1.jpg",
+        process.env.PUBLIC_URL + "/img/teracobanner1.jpg",
+        process.env.PUBLIC_URL + "/img/teracobanner1.jpg",
+      ]
+    : [
+        process.env.PUBLIC_URL + "/img/teracobanner1.jpg",
+        process.env.PUBLIC_URL + "/img/teracobanner1.jpg",
+        process.env.PUBLIC_URL + "/img/teracobanner1.jpg",
+        process.env.PUBLIC_URL + "/img/teracobanner1.jpg",
+      ];
+};
 
 export default function ImageSlider() {
   const [index, setIndex] = useState(0);
+  const [images, setImages] = useState(getImages());
   const timeoutRef = useRef(null);
 
   const resetTimeout = () => {
@@ -19,13 +28,23 @@ export default function ImageSlider() {
   };
 
   useEffect(() => {
+    // Cập nhật ảnh nếu đổi từ mobile sang desktop hoặc ngược lại
+    const handleResize = () => {
+      setImages(getImages());
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
     resetTimeout();
     timeoutRef.current = setTimeout(() => {
       setIndex((prev) => (prev + 1) % images.length);
     }, 5000);
-
     return () => resetTimeout();
-  }, [index]);
+  }, [index, images]);
 
   return (
     <div className="slider-container">

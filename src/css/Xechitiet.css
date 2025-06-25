@@ -393,3 +393,45 @@
 .tab-nav-item:hover {
   border-bottom: 3px solid red;
 }
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  transform: translateY(-50%);
+}
+
+.custom-arrow.prev {
+  left: 10px;
+}
+
+.custom-arrow.next {
+  right: 10px;
+}
+
+@media (min-width: 768px) {
+  .custom-arrow {
+    display: none !important;
+  }
+}
+
+.intro-box {
+  background-color: #d71920; /* màu đỏ như ảnh */
+  border-radius: 4px;
+}
+.intro-box p {
+  margin-bottom: 1rem;
+}
+.intro-box hr {
+  margin: 1rem 0;
+  opacity: 0.5;
+}
