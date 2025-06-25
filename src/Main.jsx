@@ -133,7 +133,7 @@ export default function Main() {
 
             </div>
             <div className="col-md-6 inner-picture wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.3s">
-              <img src="/img/sectionbot.jpg" className="img-fluid rounded" alt="Ảnh sản phẩm" />
+                <img src={process.env.PUBLIC_URL + "/img/sectionbot.jpg"} className="img-fluid rounded" alt="Ảnh sản phẩm" />
             </div>
           </div>
         </div>
@@ -144,7 +144,7 @@ export default function Main() {
           <div className="row">
             <div className="col-md-6 mb-3 inner-order">
               <div className="inner-picture">
-                <img src="/img/picture-two.png" alt="" />
+                 <img src={process.env.PUBLIC_URL +"/img/picture-two.png"} alt="" />
               </div>
             </div>
             <div className="col-md-6 mb-3">

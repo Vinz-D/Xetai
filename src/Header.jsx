@@ -32,7 +32,7 @@ export default function Header() {
       <header className="header-main shadow-sm position-sticky top-0 bg-white" style={{ zIndex: 1050 }}>
         <div className="container-fluid py-2 px-3 d-flex justify-content-between align-items-center">
           {/* Logo */}
-          <Link to="/">
+          <Link to="/Xetai">
             <img src={process.env.PUBLIC_URL + "/img/logo.png"} alt="Banner" alt="Logo" style={{ height: 32 }} />
           </Link>
 
@@ -49,7 +49,7 @@ export default function Header() {
 
           {/* === Desktop Nav === */}
           <nav className="d-none d-md-flex gap-4 align-items-center header-menu fw-semibold">
-            <Link to="/" className="nav-link-custom">TRANG CHỦ</Link>
+            <Link to="/Xetai" className="nav-link-custom">TRANG CHỦ</Link>
 
             <div className="position-relative group">
               <span className="nav-link-custom">SẢN PHẨM ▾</span>

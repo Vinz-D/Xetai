@@ -106,7 +106,7 @@ const XeChiTiet = () => {
               {colorKeys.map((color, i) => (
                 <span
                   key={color}
-                  className={`color-dot border ${selectedColorIndex === i ? 'border-3 border-dark' : 'border-2 border-secondary'}`}
+                  className={`color-dot ${selectedColorIndex === i ? 'border-3 ' : 'border-2 border-secondary'}`}
                   style={{
                     width: '25px',
                     height: '25px',
