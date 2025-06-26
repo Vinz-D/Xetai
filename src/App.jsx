@@ -7,6 +7,7 @@ import XeChiTiet from './Chitietxe';
 import AccordionXe from './AccordionXe';
 import GioiThieu from './Gioithieu';
 import IntroBanner from './IntroBanner';
+import ProductSlider from './ProductSlider';
 import Main from './Main';
 import './css/style.css';
 import './css/bootstrap.min.css';
@@ -43,6 +44,7 @@ export default function App() {
               <>
                 <ImageSlider/>
                       <IntroBanner />
+                      
                 {/* <TabSectionNav /> */}
                   <AccordionXe />
                 <Main />

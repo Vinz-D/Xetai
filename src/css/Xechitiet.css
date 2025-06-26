@@ -299,6 +299,9 @@
 }
 
 
+.inner-main .row{
+  margin-top: 10px;
+}
 
 /* header */
 /* === NAV ITEM STYLES === */
@@ -389,6 +392,9 @@
 @media (max-width: 578px) {
  .header-top {
   display: none !important;
+ }
+ .slider-container{
+  height: 530px !important;
  }
   
 }
@@ -500,4 +506,19 @@
     font-size: 14px;
     padding: 10px;
   }
+}
+
+/* .slick-prev:before{
+  position: relative !;
+  top: 3px;
+  left: 1px;
+}
+
+.slick-prev:before, .slick-next:before{
+  font-size: 30px !important;
+} */
+
+/* Trong file Xechitiet.css */
+.slick-prev.custom-arrow, .slick-next.custom-arrow {
+  position: absolute !important;
 }

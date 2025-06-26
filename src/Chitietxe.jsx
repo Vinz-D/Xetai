@@ -7,6 +7,53 @@ import './css/Xechitiet.css';
 import ImageSlider from "./ImageSlider";
 import { productData } from "./AccordionXe";
 import TabSectionNav from './TabSectionNav';
+import { Accordion } from 'react-bootstrap';
+
+const NextArrow = ({ className, style, onClick }) => (
+  <div
+    className={className}
+    onClick={onClick}
+    style={{
+      ...style,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: '#e1e1e1',
+      borderRadius: '50%',
+      width: '25px',
+      height: '25px',
+      zIndex: 2,
+      right: '10px',
+      top: '50%',
+      transform: 'translateY(-50%)',
+    }}
+  >
+    <span style={{ color: '#fff', fontSize: '20px' }}></span>
+  </div>
+);
+
+const PrevArrow = ({ className, style, onClick }) => (
+  <div
+    className={className}
+    onClick={onClick}
+    style={{
+      ...style,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: '#e1e1e1',
+      borderRadius: '50%',
+      width: '25px',
+      height: '25px',
+      zIndex: 2,
+      left: '10px',
+      top: '50%',
+      transform: 'translateY(-50%)',
+    }}
+  >
+    <span style={{ color: '#fff', fontSize: '20px' }}></span>
+  </div>
+);
 
 const XeChiTiet = () => {
   const { id } = useParams();
@@ -57,8 +104,8 @@ const XeChiTiet = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     beforeChange: (_, next) => setSelectedColorIndex(next),
-    nextArrow: <div className="custom-arrow next"><i className="bi bi-chevron-right"></i></div>,
-    prevArrow: <div className="custom-arrow prev"><i className="bi bi-chevron-left"></i></div>,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   const handleNavigate = (item) => {
@@ -72,6 +119,38 @@ const XeChiTiet = () => {
   const relatedProducts = currentGroup
     ? currentGroup.products.filter(p => p.id !== product.id).slice(0, 6)
     : [];
+
+  const relatedSliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
+
+  const renderRelatedProduct = (p, i) => (
+    <div key={i} className="px-2 mb-4">
+      <div className="card h-100 text-center border-0">
+        <div onClick={() => handleNavigate(p)} style={{ cursor: 'pointer' }}>
+          <img
+            src={p.img}
+            alt={p.title}
+            className="card-img-top img-fluid p-3"
+            style={{ objectFit: 'contain', height: '200px', width: '100%' }}
+          />
+        </div>
+        <div className="card-body d-flex flex-column">
+          <h5 className="card-title text-danger fw-bold">{p.title}</h5>
+          <p className="card-text text-muted">
+            <small>{Object.keys(p.imageData?.white || {}).join("KG | ") + "KG"}</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -158,36 +237,27 @@ const XeChiTiet = () => {
             </div>
           </div>
         </div>
-
         {/* SẢN PHẨM LIÊN QUAN */}
-        <div className="mt-4">
-          <h3 className="inner-header text-danger fw-bold mb-4">SẢN PHẨM LIÊN QUAN</h3>
-          <div className="row">
-            {relatedProducts.length > 0 ? (
-              relatedProducts.map((p, i) => (
-                <div key={i} className="col-12 col-sm-6 col-md-4 col-xl-3 mb-4">
-                  <div className="card h-100 text-center border-0">
-                    <div onClick={() => handleNavigate(p)} style={{ cursor: 'pointer' }}>
-                      <img
-                        src={p.img}
-                        alt={p.title}
-                        className="card-img-top img-fluid p-3"
-                        style={{ objectFit: 'contain', height: '200px', width: '100%' }}
-                      />
-                    </div>
-                    <div className="card-body d-flex flex-column">
-                      <h5 className="card-title text-danger fw-bold">{p.title}</h5>
-                      <p className="card-text text-muted">
-                        <small>{Object.keys(p.imageData?.white || {}).join("KG | ") + "KG"}</small>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))
+        <div className="inner-main">
+          <h2 className="box-tittle wow zoomIn">Sản phẩm khác</h2>
+          <div className="inner-box-inline"></div>
+          {relatedProducts.length > 0 ? (
+            isMobile ? (
+              <Slider {...relatedSliderSettings}>
+                {relatedProducts.map((p, i) => renderRelatedProduct(p, i))}
+              </Slider>
             ) : (
-              <div className="col-12 text-center text-muted">Không có sản phẩm khác để hiển thị.</div>
-            )}
-          </div>
+              <div className="row">
+                {relatedProducts.map((p, i) => (
+                  <div key={i} className="col-12 col-sm-6 col-md-4 col-xl-3 mb-4">
+                    {renderRelatedProduct(p, i)}
+                  </div>
+                ))}
+              </div>
+            )
+          ) : (
+            <div className="col-12 text-center text-muted">Không có sản phẩm khác để hiển thị.</div>
+          )}
         </div>
       </div>
     </>

@@ -1,5 +1,5 @@
 // AccordionXe.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Accordion } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './css/Xechitiet.css';
@@ -187,7 +187,7 @@ export const productData = [
   },
   {
     id: 3,
-    group: 'TỪ 5 TẤN - 7 TẤN',
+    group: 'TỪ 3 TẤN - 5 TẤN',
     products: [
       {
         id: 'teraco',
@@ -275,79 +275,131 @@ export const productData = [
 ];
 
 
+const NextArrow = ({ className, style, onClick }) => (
+  <div
+    className={className}
+    onClick={onClick}
+    style={{
+      ...style,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: '#e1e1e1',
+      borderRadius: '50%',
+      width: '25px',
+      height: '25px',
+      zIndex: 2,
+      right: '10px',
+      top: '40%',
+      transform: 'translateY(-50%)',
+    }}
+  >
+    <span style={{ color: '#fff', fontSize: '20px' }}>{''}</span>
+  </div>
+);
+
+const PrevArrow = ({ className, style, onClick }) => (
+  <div
+    className={className}
+    onClick={onClick}
+    style={{
+      ...style,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: '#e1e1e1',
+      borderRadius: '50%',
+      width: '30px',
+      height: '25px',
+      zIndex: 2,
+      left: '10px',
+      top: '40%',
+      transform: 'translateY(-50%)',
+    }}
+  >
+    <span style={{ color: '#fff', fontSize: '20px' }}>{''}</span>
+  </div>
+);
+
 
 export default function AccordionXe() {
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 576);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 576);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleShow = (product) => {
     navigate(`/chi-tiet/${product.id}`, { state: product });
   };
 
-  const renderProducts = (products) => (
-    <div className="row panel-body">
-      {products.map((product, index) => (
-        <div key={index} className="col-lg-6 col-xl-3 mb-3">
-          <div className="inner-product" onClick={() => handleShow(product)} style={{ cursor: 'pointer' }}>
-            <div className="inner-image">
-              <img src={product.img} alt={product.title} className="img-fluid" />
-            </div>
-            <div className="inner-tittle">
-              <p>{product.title}</p>
-              <p className="inner-contact">{product.contact}</p>
-            </div>
 
-          </div>
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
+
+  const renderProductCard = (product, index) => (
+    <div key={index} className="px-2 ">
+      <div
+        className="inner-product"
+        onClick={() => handleShow(product)}
+        style={{
+          cursor: 'pointer',
+          border: '1px solid #eee',
+          borderRadius: '8px',
+          background: '#fff',
+          height: '100%',
+        }}
+      >
+        <div className="inner-image text-center">
+          <img
+            src={product.img}
+            alt={product.title}
+            className="img-fluid"
+            style={{ height: '150px', objectFit: 'contain' }}
+          />
         </div>
-      ))}
+        <div className="inner-tittle text-center mt-2">
+          <p className="fw-bold">{product.title}</p>
+          <p className="inner-contact text-muted">{product.contact}</p>
+        </div>
+      </div>
     </div>
   );
 
   return (
     <div className="section-loaixe">
       <div className="container-xl">
-          {/* <h2 className="box-tittle">DANH SÁCH XE TẢI</h2> */}
-        <Accordion defaultActiveKey="0" alwaysOpen>
-          {productData.map((item, idx) => (
-            <Accordion.Item eventKey={idx.toString()} key={item.id}>
-              <Accordion.Header>{item.group}</Accordion.Header>
-              <Accordion.Body>{renderProducts(item.products)}</Accordion.Body>
-            </Accordion.Item>
-          ))}
-        </Accordion>
+        {productData.map((item, idx) => (
+          <div key={idx} className="product-slider mb-5">
+            <h3 className="mb-3 text-danger">{item.group}</h3>
+
+            {isMobile ? (
+              <Slider {...sliderSettings}>
+                {item.products.map((product, index) => renderProductCard(product, index))}
+              </Slider>
+            ) : (
+              <div className="row">
+                {item.products.map((product, index) => (
+                  <div key={index} className="col-md-4 col-lg-3">
+                    {renderProductCard(product, index)}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
 }
-
-const Imagebottom = ({ images }) => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4, // số lượng ảnh hiển thị
-    slidesToScroll: 1,
-    arrows: true,
-  };
-
-  return (
-    <div style={{ margin: '20px 0' }}>
-      <Slider {...settings}>
-        {images.map((img, idx) => (
-          <div key={idx}>
-            <img
-              src={img}
-              alt={`img-${idx}`}
-              style={{
-                width: '95%',
-                height: '150px',
-                objectFit: 'cover',
-                borderRadius: '8px',
-                margin: 'auto'
-              }}
-            />
-          </div>
-        ))}
-      </Slider>
-    </div>
-  );
-};

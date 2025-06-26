@@ -5,10 +5,10 @@ const getImages = () => {
   const isMobile = window.innerWidth <= 768;
   return isMobile
     ? [
-        process.env.PUBLIC_URL + "/img/teracobanner1.jpg",
-        process.env.PUBLIC_URL + "/img/teracobanner1.jpg",
-        process.env.PUBLIC_URL + "/img/teracobanner1.jpg",
-        process.env.PUBLIC_URL + "/img/teracobanner1.jpg",
+        process.env.PUBLIC_URL + "/img/xe-tai-teraco-mobile.jpg",
+        process.env.PUBLIC_URL + "/img/xe-tai-teraco-mobile.jpg",
+        process.env.PUBLIC_URL + "/img/xe-tai-teraco-mobile.jpg",
+        process.env.PUBLIC_URL + "/img/xe-tai-teraco-mobile.jpg",
       ]
     : [
         process.env.PUBLIC_URL + "/img/teracobanner1.jpg",
