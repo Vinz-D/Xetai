@@ -13,13 +13,13 @@ import 'slick-carousel/slick/slick-theme.css';
 export const productData = [
   {
     id: 1,
-    // group: 'TỪ 900KG - 3 TẤN',
+    group: 'TỪ 900KG - 3 TẤN',
     products: [
       {
         id: 'teraco',
-        title: 'TERA100S',
+        title: 'TERA100S xe van tải nhẹ ',
         img: process.env.PUBLIC_URL + "/img/tai-nhe-tera-100-thung-lung.png",
-        contact: 'XE VAN TẢI NHẸ',
+        contact: 'Liên hệ: 0977 452 970',
         description: 'Tải nhẹ máy xăng TERA100S với tải trọng 990kg sở hữu khối động cơ Mitsubishi Tech bền bỉ - hiệu suất cao, tiết kiệm nhiên liệu, khung sườn chắc chắn và khả năng di chuyển linh hoạt trên mọi cung đường nông thôn hay đô thị.',
         imageData: {
           white: {
@@ -100,7 +100,7 @@ export const productData = [
   },
   {
     id: 2,
-    // group: 'TỪ 3 TẤN - 5 TẤN',
+    group: 'TỪ 3 TẤN - 5 TẤN',
     products: [
       {
         id: 'teraco',
@@ -187,7 +187,7 @@ export const productData = [
   },
   {
     id: 3,
-    // group: 'TỪ 3 TẤN - 5 TẤN',
+    group: 'TỪ 5 TẤN - 7 TẤN',
     products: [
       {
         id: 'teraco',

@@ -149,7 +149,7 @@ export default function Main() {
             </div>
             <div className="col-md-6 mb-3">
               <div className="inner-decs">
-                <h2>Với nền tảng cơ sở vật chất khang trang, hiện đại</h2>
+                <h2>Với nền tảng cơ sở vật chất khang trang</h2>
                 <div className="inner-box-inline"></div>
                 <p>Cùng với đội ngũ nhân lực nhiều thâm niên, đầy nhiệt huyết mà Ô Tô Hòa Phúc đang sở hữu, chúng tôi luôn tự hào về truyền thống văn hóa doanh nghiệp mà Ban Điều Hành đang cố gắng duy trì trong từng chiến lược kinh doanh, từng kế hoạch hành động: “Hướng tới mục tiêu chất lượng toàn diện, chăm sóc từng khách hàng một như chính người thân của mình</p>
               </div>
