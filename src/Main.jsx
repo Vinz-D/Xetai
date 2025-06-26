@@ -195,6 +195,13 @@ export default function Main() {
                   <p>Với nhiều năm kinh nghiệm trong ngành ô tô, chúng tôi cam kết mang đến cho khách hàng sản phẩm chất lượng cao, dịch vụ tận tâm và giá cả hợp lý.</p>
                 </div>
               </div>
+                <div className="col-md-4 col-sm-12">
+                <div className="inner-content">
+                  <h4 className="inner-tittle">Tôi là Vượng Đoàn </h4>
+                  <p>Đại lý chính hãng cung cấp các dòng xe tải, xe du lịch, phụ tùng và dịch vụ bảo dưỡng uy tín hàng đầu</p>
+                  <p>Với nhiều năm kinh nghiệm trong ngành ô tô, chúng tôi cam kết mang đến cho khách hàng sản phẩm chất lượng cao, dịch vụ tận tâm và giá cả hợp lý.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

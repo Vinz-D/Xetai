@@ -30,17 +30,24 @@ export default function Footer() {
           <div class="footer-list col-md-3 col-sm-12">
             <div class="footer-tittle">
               <h2>Mạng xã hội</h2>
+              {/* <iframe width="340" height="500" padding="10px"
+    src="https://www.youtube.com/embed/f6aUmjRjniM?feature=share"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
+    allowfullscreen>
+</iframe> */}
             </div>
 
           </div>
           <div class="footer-list col-md-3 col-sm-12">
             <div class="footer-title">
               <h2>Theo dõi Fanpage</h2>
-              <iframe
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fhoaphucauto&amp;tabs=timeline&amp;width=340&amp;height=500&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
-                width="340" height="350" scrolling="no" frameborder="0"
-                allowfullscreen="true"
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                <iframe
+                  src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FHotline.0977.452.970&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                  width="340" height="350" scrolling="no" frameborder="0"
+                  allowfullscreen="true"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
             </div>
           </div>
         </div>

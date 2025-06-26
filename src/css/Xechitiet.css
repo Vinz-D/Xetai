@@ -75,14 +75,21 @@
   margin: 0;
 }
 
-.section-loaixe .inner-product .inner-tittle {
-
-}
+/* .inner-product .inner-tittle p{
+  color: #d71920 !important;
+  background:none;
+  font-size: 25px;
+} */
 
 .section-loaixe .accordion-header button{
   color: #d71920;
   background:none;
   font-size: 25px;
+}
+.accordion-body .inner-tittle .inner-contact {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .section-loaixe .accordion-item {
@@ -93,16 +100,14 @@
   border: none;
 }
 
-.accordion-body .inner-tittle {
-  text-align: center;
+
+.inner-text {
+    color: #d71920;
+    text-align: center;
   font-size: 16px;
   font-weight: 500;
 }
-.accordion-body .inner-tittle .inner-contact {
-  text-align: center;
-  font-size: 17px;
-  font-weight: 500;
-}
+
 
 .section-loaixe .inner-tittle{
   align-content: center;
@@ -508,6 +513,12 @@
   }
 }
 
+.inner-body {
+  padding: 5px !important;
+}
+
+
+
 /* .slick-prev:before{
   position: relative !;
   top: 3px;
@@ -521,4 +532,17 @@
 /* Trong file Xechitiet.css */
 .slick-prev.custom-arrow, .slick-next.custom-arrow {
   position: absolute !important;
+}
+
+
+.inner-card {
+  height: 330px;
+  margin-bottom: 10px;
+}
+
+.section-loaixe .inner-decs {
+  text-align: left;
+  font-size: 25px;
+  font-weight: 500;
+  color: #d71920;
 }

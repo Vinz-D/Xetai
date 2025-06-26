@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './css/Xechitiet.css';
+import './css/style.css';
 
 export default function Header() {
   return (
@@ -29,7 +30,7 @@ export default function Header() {
 
 
       {/* --- MAIN HEADER --- */}
-      <header className="header-main shadow-sm position-sticky top-0 bg-white" style={{ zIndex: 1050 }}>
+      <header className="header shadow-sm top-0 bg-white" style={{ zIndex: 1050 }}>
         <div className="container-fluid py-2 px-3 d-flex justify-content-between align-items-center">
           {/* Logo */}
           <Link to="/Xetai">

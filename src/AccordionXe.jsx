@@ -187,7 +187,7 @@ export const productData = [
   },
   {
     id: 3,
-    group: 'TỪ 3 TẤN - 5 TẤN',
+    group: 'TỪ 5 TẤN - 7 TẤN',
     products: [
       {
         id: 'teraco',
@@ -349,7 +349,7 @@ export default function AccordionXe() {
   };
 
   const renderProductCard = (product, index) => (
-    <div key={index} className="px-2 ">
+    <div key={index} className="inner-card ">
       <div
         className="inner-product"
         onClick={() => handleShow(product)}
@@ -370,7 +370,7 @@ export default function AccordionXe() {
           />
         </div>
         <div className="inner-tittle text-center mt-2">
-          <p className="fw-bold">{product.title}</p>
+          <p className="inner-text">{product.title}</p>
           <p className="inner-contact text-muted">{product.contact}</p>
         </div>
       </div>
@@ -381,9 +381,9 @@ export default function AccordionXe() {
     <div className="section-loaixe">
       <div className="container-xl">
         {productData.map((item, idx) => (
-          <div key={idx} className="product-slider mb-5">
-            <h3 className="mb-3 text-danger">{item.group}</h3>
-
+          <div key={idx} className="product-slider mb-2">
+            <h3 className="inner-decs">{item.group}</h3>
+              {/* <div className="inner-box-inline"></div> */}
             {isMobile ? (
               <Slider {...sliderSettings}>
                 {item.products.map((product, index) => renderProductCard(product, index))}
@@ -391,7 +391,7 @@ export default function AccordionXe() {
             ) : (
               <div className="row">
                 {item.products.map((product, index) => (
-                  <div key={index} className="col-md-4 col-lg-3">
+                  <div key={index} className="col-md-4 col-lg-3 inner-body">
                     {renderProductCard(product, index)}
                   </div>
                 ))}
